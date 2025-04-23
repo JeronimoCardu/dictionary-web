@@ -70,3 +70,14 @@ html,
     text-decoration: underline;
   }
 }
+
+.shadowOptions {
+  box-shadow:
+    0px 5px 30px rgba(0, 0, 0, 0.1),
+    0px -5px 30px rgba(0, 0, 0, 0.1);
+}
+.shadowOptionsDark {
+  box-shadow:
+    0px 5px 30px rgba(164, 69, 237, 0.5),
+    0px -5px 30px rgba(164, 69, 237, 0.5);
+}

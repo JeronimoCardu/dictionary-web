@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import useDicStore from "../hooks/store";
 
 export default function ToggleTheme() {
   const body = document.querySelector("body");
-  const [theme, setTheme] = useState("light");
+  const theme = useDicStore((state) => state.theme);
+  const setTheme = useDicStore((state) => state.setTheme);
+
   const toggleTheme = () => {
     if (theme == "light") setTheme("dark");
     if (theme == "dark") setTheme("light");
@@ -10,13 +13,15 @@ export default function ToggleTheme() {
   useEffect(() => {
     body?.setAttribute("data-theme", theme);
   }, [body, theme]);
+
   const styleButton =
     theme == "dark"
       ? "absolute  translate-x-[150%] top-[50%] -translate-y-[50%]"
       : "absolute translate-x-1 top-[50%] -translate-y-[50%]";
+
   return (
     <div
-      className="tablet:gap-4 flex items-center gap-2"
+      className="tablet:gap-4 flex cursor-pointer items-center gap-2"
       onClick={() => toggleTheme()}
     >
       <div
