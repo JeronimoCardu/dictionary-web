@@ -29,9 +29,9 @@ Users should be able to:
 
 ### Screenshot
 
-![Desktop](dictionary-web/public/screenshot-desktop.png)
-![Tablet](dictionary-web/public/screenshot-tablet.png)
-![Mobile](dictionary-web/public/screenshot-mobile.png)
+![Desktop](/images/screenshot-desktop.png)
+![Tablet](/images/screenshot-tablet.png)
+![Mobile](/images/screenshot-mobile.png)
 
 ### Links
 
