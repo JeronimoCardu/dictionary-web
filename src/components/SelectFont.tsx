@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useDicStore from "../hooks/store";
 
 export default function SelectFont() {
@@ -6,6 +6,7 @@ export default function SelectFont() {
   const fontSelected = useDicStore((state) => state.fontSelected);
   const theme = useDicStore((state) => state.theme);
   const setFontSelected = useDicStore((state) => state.setFontSelected);
+  const setFontPage = useDicStore((state) => state.setFontPage);
 
   const fontToClass =
     fontSelected == "Sans Serif"
@@ -13,6 +14,9 @@ export default function SelectFont() {
       : fontSelected == "Serif"
         ? "Lora"
         : "Inconsolata";
+  useEffect(() => {
+    setFontPage(fontToClass);
+  }, [fontToClass, setFontPage]);
 
   return (
     <>
@@ -35,14 +39,14 @@ export default function SelectFont() {
           <path
             fill="none"
             stroke="#A445ED"
-            stroke-width="1.5"
+            strokeWidth="1.5"
             d="m1 1 6 6 6-6"
           />
         </svg>
       </div>
       {showOptions && (
         <div
-          className={`${theme == "dark" ? "shadowOptionsDark" : "shadowOptions"}  text-black-700 dark:bg-black-800 right-30 top-18 absolute space-y-2 rounded-[1em] bg-white p-5 px-8 font-bold  dark:text-white`}
+          className={`${theme == "dark" ? "shadowOptionsDark" : "shadowOptions"} text-black-700 dark:bg-black-800 right-30 top-18 absolute z-10 space-y-2 rounded-[1em] bg-white p-5 px-8 font-bold dark:text-white`}
         >
           <p
             onClick={(e) => {

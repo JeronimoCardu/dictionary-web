@@ -1,33 +1,17 @@
-import SelectFont from "./components/SelectFont";
-import ToggleTheme from "./components/ToggleTheme";
+import { Outlet } from "react-router-dom";
+import useDicStore from "./hooks/store";
+import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 export default function App() {
+  const fontPage = useDicStore((state) => state.fontPage);
   return (
-    <>
-      <header className="desktop:mx-[20%] relative transition-discrete flex items-center justify-between p-[1.5em] duration-300 ease-linear">
-        <svg // logo SVG
-          xmlns="http://www.w3.org/2000/svg"
-          width="34"
-          height="38"
-          viewBox="0 0 34 38"
-        >
-          <g
-            fill="none"
-            fill-rule="evenodd"
-            stroke="#838383"
-            stroke-linecap="round"
-            stroke-width="1.5"
-          >
-            <path d="M1 33V5a4 4 0 0 1 4-4h26.8A1.2 1.2 0 0 1 33 2.2v26.228M5 29h28M5 37h28" />
-            <path stroke-linejoin="round" d="M5 37a4 4 0 1 1 0-8" />
-            <path d="M11 9h12" />
-          </g>
-        </svg>
-        <div className="flex gap-3">
-          <SelectFont />
-          <ToggleTheme />
-        </div>
-      </header>
-    </>
+    <div className={`font-[${fontPage}] flex min-h-screen flex-col`}>
+      <Header />
+      <main className="transition-normal linear desktop:mx-[20%] flex-1 px-[1.5em] duration-200">
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
   );
 }

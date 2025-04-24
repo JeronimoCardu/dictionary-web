@@ -8,6 +8,8 @@ html,
   width: 100%;
   height: 100%;
   font-size: 100%;
+}
+* {
   box-sizing: border-box;
 }
 
@@ -44,30 +46,26 @@ html,
 /* FONTS config */
 @layer base {
   .headingL {
-    font-family: Inter;
     font-size: 4rem;
     line-height: 4.8125rem;
   }
   .headingM {
-    font-family: Inter;
     font-size: 1.5rem;
     line-height: 1.8125rem;
   }
   .headingS {
-    font-family: Inter;
     font-size: 1.25rem;
     line-height: 1.5rem;
   }
   .bodyM {
-    font-family: Inter;
     font-size: 1.125rem;
     line-height: 1.5rem;
   }
   .bodyS {
-    font-family: Inter;
     font: size 0.875rem;
     line-height: 1.0625rem;
     text-decoration: underline;
+    text-underline-offset: 3px;
   }
 }
 
