@@ -35,7 +35,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [URL](https://dictionary-web-murex.vercel.app/keyboard)
+- Live Site URL: [URL](dictionary-web-murex.vercel.app)
 
 ## My process
 
